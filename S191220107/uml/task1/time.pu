@@ -1,0 +1,24 @@
+@startuml time
+
+participant line as line
+database line内的positions as pos
+actor positions内的Gourd as gourd
+participant Geezer as geezer
+control Geezer内的BubbleSorter as sorter
+participant log
+participant writer
+
+line -> line : 创建实例
+line -> pos : put()\n添加7个Gourd
+pos -> pos : setLinable()\n建立到Gourd对象的引用
+gourd -> gourd : setPosition()\n建立到Position对象的引用
+geezer -> geezer : getTheGeezer()\n创建唯一实例
+BubbleSort -> BubbleSort : 创建实例
+geezer -> geezer : setSorter()\n建立到BubbleSort对象的引用
+geezer -> log : lineUp()\n排队，并返回日志
+line -> sorter : 传递需要排序的信息\n并load()
+sorter -> sorter : sort()\n排序并生成日志
+sorter -> geezer : parsePlan()\n传递日志信息
+writer -> writer : 将日志保存至文件result.txt
+
+@enduml

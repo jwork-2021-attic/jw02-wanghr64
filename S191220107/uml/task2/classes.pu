@@ -1,0 +1,73 @@
+@startuml classes
+
+interface Lineable {
+    +void setPosition(Position position);
+    +Position getPosition();
+    +int getValue();
+}
+
+enum Youkai {
+    YK_{row}_{col}_r{rank}
+    -int r
+    -int g
+    -int b
+
+    {static} +Youkai getYoukaiByRank(int rank)
+    +int rank()
+    +void swapPosition(Gourd another)
+}
+
+class Line {
+    -Position[] positions
+    +Line(int length)
+    +void put(Linable linable, int i)
+    +Linable get(int i)
+    +Linable[] toArray()
+}
+
+class Position {
+        -Linable linable
+        +Position(Linable linable)
+        +void setLinable(Linable linable)
+}
+
+class Geezer {
+    {static}-Geezer theGeezer
+    {static}+Geezer getTheGeezer()
+    -Sorter sorter
+    +void setSorter(Sorter sorter)
+    +String lineUp(Line line)
+    -String[] parsePlan(String plan)
+    -void execute(String step)
+}
+
+interface Sorter {
+    +void load(int[] elements)
+    +void sort()
+    +String getPlan()
+}
+
+class HeapSorter {
+    -int[] a
+    -String plan
+    -void swap(int i, int j)
+    -void adjustHeap(int i, int length)
+}
+
+class QuickSorter {
+    -int[] a
+    -String plan
+    -void quickSort(int left, int right)
+    -int partition(int left, int right)
+    -void swap(int i, int j)
+}
+
+Youkai --|> Lineable
+Position --* Youkai
+Youkai --* Position
+Position --* Line
+Sorter --* Geezer
+HeapSorter --|> Sorter
+QuickSorter --|> Sorter
+
+@enduml
