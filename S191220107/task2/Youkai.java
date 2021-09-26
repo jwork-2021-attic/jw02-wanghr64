@@ -1,6 +1,6 @@
-package W02.S191220107.task2;
+package S191220107.task2;
 
-import W02.S191220107.task2.Line.Position;
+import S191220107.task2.Line.Position;
 
 public enum Youkai implements Linable {
     YK0_0_r0(0, 0, 0), YK0_1_r1(37, 37, 37), YK0_2_r2(52, 52, 52), YK0_3_r3(78, 78, 78), YK0_4_r4(104, 104, 104),

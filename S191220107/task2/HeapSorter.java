@@ -1,4 +1,4 @@
-package W02.S191220107.task2;
+package S191220107.task2;
 
 public class HeapSorter implements Sorter {
 

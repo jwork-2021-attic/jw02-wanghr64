@@ -1,6 +1,6 @@
-package W02.S191220107.task3;
+package S191220107.task3;
 
-import W02.S191220107.task3.Line.Position;
+import S191220107.task3.Line.Position;
 
 public interface Linable {
 

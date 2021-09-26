@@ -1,4 +1,4 @@
-package W02.S191220107.task3;
+package S191220107.task3;
 
 public class QuickSorter implements Sorter {
 
